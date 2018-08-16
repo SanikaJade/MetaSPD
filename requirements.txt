@@ -1,0 +1,5 @@
+sklearn
+networkx
+pandas
+numpy
+gspan_mining

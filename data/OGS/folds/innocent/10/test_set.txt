@@ -1,0 +1,84 @@
+t # 0
+v lea lea
+v pop pop
+v jg jg
+v je je
+v jne jne
+v movsbl movsbl
+v leave leave
+v call call
+v ret ret
+v and and
+v sub sub
+v movl movl
+v movzbl movzbl
+v jmp jmp
+v cmpl cmpl
+v setne setne
+v add add
+v test test
+v sbb sbb
+v mov mov
+v xchg xchg
+v sete sete
+v nop nop
+v cmp cmp
+v push push
+e jne mov 0.5
+e jmp xchg 0.022727272727272728
+e jmp lea 0.2727272727272727
+e test jne 0.08695652173913043
+e call leave 0.05
+e ret lea 0.3684210526315789
+e sub leave 0.17857142857142858
+e je jg 0.034482758620689655
+e mov lea 0.005494505494505495
+e test movl 0.043478260869565216
+e sub and 0.03571428571428571
+e cmpl je 1.0
+e push push 0.125
+e jmp sbb 0.022727272727272728
+e cmp lea 0.09090909090909091
+e xchg xchg 0.6923076923076923
+e add add 0.125
+e call lea 0.05
+e pop mov 0.15625
+e sub movl 0.14285714285714285
+e call cmpl 0.016666666666666666
+e call call 0.06666666666666667
+e leave jmp 0.6
+e movsbl mov 1.0
+e cmp jne 0.09090909090909091
+e call mov 0.26666666666666666
+e call cmp 0.08333333333333333
+e pop ret 0.40625
+e test sete 0.043478260869565216
+e push mov 0.71875
+e movl je 0.017241379310344827
+e and movl 0.5
+e nop lea 0.005555555555555556
+e leave ret 0.4
+e call nop 0.03333333333333333
+e cmp mov 0.36363636363636365
+e nop nop 0.7888888888888889
+e lea lea 0.07407407407407407
+e test mov 0.17391304347826086
+e and push 0.5
+e ret mov 0.05263157894736842
+e setne movzbl 1.0
+e call movl 0.2
+e call sub 0.1
+e movl movl 0.47413793103448276
+e cmp je 0.45454545454545453
+e pop pop 0.4375
+e call jmp 0.016666666666666666
+e jmp nop 0.6363636363636364
+e sete movl 1.0
+e mov mov 0.3076923076923077
+e sub mov 0.32142857142857145
+e je mov 0.5172413793103449
+e call add 0.1
+e movl jmp 0.008620689655172414
+e push sbb 0.03125
+e movl mov 0.25862068965517243
+e test je 0.6521739130434783
