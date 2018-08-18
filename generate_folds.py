@@ -1,8 +1,7 @@
 import glob
 import os
 import random
-
-from MetaSPD import convert_opcodes
+import convert_opcodes
 
 
 def programs_to_gspan(programs, output, opcode_set):

@@ -1,11 +1,9 @@
 import os
 import sys
 import tempfile
-
 import networkx.algorithms.isomorphism as iso
 from gspan_mining import gSpan
-
-from MetaSPD.gspan_parser import *
+from gspan_parser import *
 
 
 def subgraph_is_isomorphic(graph, subgraph):

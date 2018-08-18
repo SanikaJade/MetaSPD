@@ -1,7 +1,6 @@
 import pandas as pd
 from graph_matcher import *
-
-from MetaSPD.gspan_parser import *
+from gspan_parser import *
 
 if __name__ == "__main__":
     pirated_directory = '.\\data\\MySQL\\folds\\pirated'
