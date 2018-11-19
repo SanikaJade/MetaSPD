@@ -1,2 +1,2 @@
 # MetaSPD
-Metamorphic Analysis for Automatic Software Piracy Detection
+This repository contains all data and source codes developed for MetaSPD research.
