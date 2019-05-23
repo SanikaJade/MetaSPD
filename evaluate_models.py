@@ -6,11 +6,11 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.tree import tree
 
 
-def evaluate_model(directory_path, model):
+def evaluate_model(directory_path, model_name):
     """
     trains and evaluates model with 10 fold cross validation method
     :param directory_path: a path which contains 10 folds for both training set and test set
-    :param model: training model(NB,LR,DT)
+    :param model_name: training model(NB,LR,DT)
     :return: f1, precision, recall, auc, tpr ,fpr
     """
     f1 = tpr = fpr = auc = precision = recall = 0
@@ -23,18 +23,11 @@ def evaluate_model(directory_path, model):
         test_y = df_test['Label']
 
         # initialize classifier model
-        if model == 'CART':
-            clf = tree.DecisionTreeClassifier()
-        elif model == 'NB':
-            clf = GaussianNB()
-        elif model == 'LR':
-            clf = linear_model.LogisticRegression(C=1e5)
-        else:
-            clf = None
+        classifier = __get_classifier_instance(model_name)
 
-        clf = clf.fit(train_x, train_y)
+        classifier = classifier.fit(train_x, train_y)
         y_true = test_y
-        y_pred = clf.predict(test_x)
+        y_pred = classifier.predict(test_x)
         f1 += f1_score(y_true, y_pred, pos_label='Pirated')
         precision += precision_score(y_true, y_pred, pos_label='Pirated')
         recall += recall_score(y_true, y_pred, pos_label='Pirated')
@@ -43,6 +36,22 @@ def evaluate_model(directory_path, model):
         tpr += tp / (tp + fn)
         fpr += fp / (fp + tn)
     return f1 / 10, precision / 10, recall / 10, auc / 10, tpr / 10, fpr / 10
+
+
+def __get_classifier_instance(model_name):
+    """
+    generates sklearn classifier object
+    :param model_name: name of model
+    :return: sklearn classifier object
+    """
+    if model_name == 'CART':
+        return tree.DecisionTreeClassifier()
+    elif model_name == 'NB':
+        return GaussianNB()
+    elif model_name == 'LR':
+        return linear_model.LogisticRegression(C=1e5)
+    else:
+        return None
 
 
 def __confusion_matrix(y_actual, y_hat):
