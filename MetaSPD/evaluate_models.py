@@ -21,10 +21,8 @@ def evaluate_model(directory_path, model_name):
         train_y = df_train['Label']
         test_x = df_test.loc[:, df_test.columns != 'Label']
         test_y = df_test['Label']
-
         # initialize classifier model
         classifier = __get_classifier_instance(model_name)
-
         classifier = classifier.fit(train_x, train_y)
         y_true = test_y
         y_pred = classifier.predict(test_x)
